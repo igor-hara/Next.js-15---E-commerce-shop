@@ -1,12 +1,17 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "@/assets/styles/globals.css";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import '@/assets/styles/globals.css';
+import { APP_NAME, APP_DESCRIPTION, APP_URL } from '@/lib/constants/indext';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Prostore",
-  description: "Modern ecommerce platform build with Next.js",
+  title: {
+    template: `%s | Prostore`,
+    default: APP_NAME,
+  },
+  description: APP_DESCRIPTION,
+  metadataBase: new URL(APP_URL),
 };
 
 export default function RootLayout({
@@ -16,11 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.className} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${inter.className} antialiased`}>{children}</body>
     </html>
   );
 }
