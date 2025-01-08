@@ -48,13 +48,13 @@ const ThemeToggle = () => {
           checked={theme === 'light'}
           onClick={() => setTheme('light')}
         >
-          Light
+          System
         </DropdownMenuCheckboxItem>{' '}
         <DropdownMenuCheckboxItem
           checked={theme === 'dark'}
           onClick={() => setTheme('dark')}
         >
-          Dark
+          System
         </DropdownMenuCheckboxItem>{' '}
         <DropdownMenuCheckboxItem
           checked={theme === 'system'}
